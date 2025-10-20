@@ -1,105 +1,110 @@
-import "./App.css"
+import "./App.css";
 
 function App() {
   return (
-    <>
-      <div className="p-6 space-y-8 max-w-6xl mx-auto">
-        {/* LATIHAN 1 - NAVBAR */}
-        <h2 className="font-semibold">LATIHAN 1</h2>
-        <nav className="p-4 bg-gray-100 rounded">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            {/* Kiri - Logo */}
-            <div className="font-bold text-xl">MyLogo</div>
+    <main className="min-h-screen bg-slate-50 flex justify-center items-center p-4 font-sans">
+      {/* Container Start */}
+      <div className="w-full max-w-sm">
 
-            {/* Kanan - Menu */}
-            <ul className="flex flex-col md:flex-row gap-2 md:gap-6">
-              <li>
-                <a href="#" className="text-gray-700 hover:underline">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:underline">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:underline">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <hr className="border-gray-200" />
-
-        {/* LATIHAN 2 - GRID GALERI */}
-        <h2 className="font-semibold">LATIHAN 2</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-2 justify-start">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <img
-              key={i}
-              src="https://www.placehold.co/200x200"
-              alt={`Gambar Galeri ${i + 1}`}
-              className="rounded bg-gray-200 w-[200px] h-[200px] lg:w-[130px] lg:h-[130px] object-contain"
-            />
-        ))}
+        {/* Logo Start */}
+        <div className="flex justify-center items-baseline font-poppins tracking-wider text-teal-600 text-4xl mb-12">
+          <span className="font-bold">FINE</span>
+          <span className="font-normal">bank</span>
+          <span className="font-bold">.IO</span>
         </div>
 
-        <hr className="border-gray-200" />
+        {/* Form Section */}
+        <div>
+          <form action="#" onSubmit={(e) => e.preventDefault()}>
+            
+            {/* Email Input Field */}
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                Email Address
+              </label>
+              <input
+                type="email"
+                className="py-3 px-4 text-sm rounded-md w-full bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="hello@example.com"
+                name="email"
+                id="email"
+              />
+            </div>
 
-        {/* LATIHAN 3 - PRICING TABLE */}
-        <h2 className="font-semibold">LATIHAN 3</h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          <div className="p-6 text-center bg-gray-200">
-            <h3 className="font-semibold text-lg">Basic</h3>
-            <p className="text-gray-500 mt-1">Rp 50.000</p>
-          </div>
+            {/* Password Input Field */}
+            <div className="mb-5">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                Password
+              </label>
+              <input
+                type="password"
+                className="py-3 px-4 text-sm rounded-md w-full bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="************"
+                name="password"
+                id="password"
+              />
+            </div>
 
-          <div className="p-6 text-center bg-blue-200 md:scale-105">
-            <h3 className="font-semibold text-lg">Pro</h3>
-            <p className="text-gray-700 mt-1">Rp 100.000</p>
-          </div>
+            {/* "Keep me signed in" Checkbox */}
+            <div className="flex items-center mb-6">
+              <input
+                type="checkbox"
+                className="h-4 w-4 accent-teal-600 border-gray-300 rounded focus:ring-teal-500"
+                name="status"
+                id="status"
+              />
+              <label htmlFor="status" className="text-sm text-gray-700 ml-2">
+                Keep me signed in
+              </label>
+            </div>
 
-          <div className="p-6 text-center bg-gray-200">
-            <h3 className="font-semibold text-lg">Premium</h3>
-            <p className="text-gray-600 mt-1">Rp 200.000</p>
-          </div>
+            {/* Login Button */}
+            <button
+              className="h-12 w-full rounded-md text-sm font-semibold bg-teal-500 text-white hover:bg-teal-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+              type="submit"
+            >
+              Login
+            </button>
+          </form>
         </div>
 
-        <hr className="border-gray-200" />
-
-        {/* LATIHAN 4 - DASHBOARD LAYOUT */}
-        <h2 className="font-semibold">LATIHAN 4</h2>
-        <div className="grid grid-cols-12 gap-4">
-          <header className="bg-gray-300 p-4 rounded col-span-12 h-12 md:h-40 min-h-40">
-            Header
-          </header>
-
-          <aside className="bg-gray-200 p-4 rounded col-span-12 md:col-span-3 min-h-40">Sidebar</aside>
-
-          <main className="bg-white border p-4 rounded col-span-12 md:col-span-9 min-h-40">Content</main>
-
-          <footer className="bg-gray-300 p-4 rounded col-span-12 h-12 md:h-40 min-h-40">
-            Footer
-          </footer>
+        {/* Divider "or sign in with" */}
+        <div className="my-8 flex items-center">
+          <div className="flex-grow border-t border-gray-300"></div>
+          <span className="flex-shrink mx-4 text-gray-500 text-xs">or sign in with</span>
+          <div className="flex-grow border-t border-gray-300"></div>
         </div>
 
-        <hr className="border-gray-200" />
-
-        {/* LATIHAN 5 - CARD PRODUCT */}
-        <h2 className="font-semibold">LATIHAN 5</h2>
-        <div className="p-4 border rounded flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
-          <img src="https://www.placehold.co/80x80" alt="Gambar Produk" className="h-20 w-20 rounded object-cover" />
-          <div>
-            <h3 className="font-semibold text-lg">Nama Produk</h3>
-            <p className="text-sm text-gray-600">Deskripsi produk singkat...</p>
-          </div>
+        {/* Sign in with Google Button */}
+        <div className="mb-8">
+          <button
+            className="h-12 flex items-center justify-center rounded-md text-sm w-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+            type="button"
+          >
+            <svg
+              className="h-5 w-5 mr-3"
+              xmlns="http://www.w.org/2000/svg"
+              viewBox="0 0 48 48"
+            >
+              <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+              <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+              <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+              <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571l6.19,5.238C41.38,36.162,44,30.638,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
         </div>
+
+        {/* Create an account link */}
+        <div className="text-center">
+          <a href="#" className="text-teal-600 text-sm font-bold hover:underline">
+            Create an account
+          </a>
+        </div>
+        
       </div>
-    </>
-  )
+    </main>
+  );
 }
 
-export default App
+export default App;
