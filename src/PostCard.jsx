@@ -7,7 +7,7 @@ function PostCard(props) {
   return (
     <div 
       className={`
-        bg-white p-4 rounded-lg shadow /* Ubah padding menjadi p-4 agar lebih ringkas */
+        bg-white p-4 rounded-lg shadow 
         transition-all duration-300 ease-in-out
         flex flex-col h-full 
         
